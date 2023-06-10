@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+
+
 function Square({ value, onSquareClick }) {
   return (
     <button className="square" onClick={onSquareClick}>
@@ -8,7 +10,10 @@ function Square({ value, onSquareClick }) {
   );
 }
 
+
+
 function Board({ xIsNext, squares, onPlay }) {
+
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
       return;
@@ -17,10 +22,11 @@ function Board({ xIsNext, squares, onPlay }) {
     if (xIsNext) {
       nextSquares[i] = 'X';
     } else {
-      nextSquares[i] = 'O';
+      nextSquares[i] = 'Y';
     }
     onPlay(nextSquares);
   }
+
 
   const winner = calculateWinner(squares);
   let status;
@@ -51,6 +57,8 @@ function Board({ xIsNext, squares, onPlay }) {
     </>
   );
 }
+
+
 
 export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -93,6 +101,9 @@ export default function Game() {
     </div>
   );
 }
+
+
+
 
 function calculateWinner(squares) {
   const lines = [
