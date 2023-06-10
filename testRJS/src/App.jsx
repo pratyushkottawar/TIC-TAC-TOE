@@ -22,7 +22,7 @@ function Board({ xIsNext, squares, onPlay }) {
     if (xIsNext) {
       nextSquares[i] = 'X';
     } else {
-      nextSquares[i] = 'Y';
+      nextSquares[i] = 'O';
     }
     onPlay(nextSquares);
   }
