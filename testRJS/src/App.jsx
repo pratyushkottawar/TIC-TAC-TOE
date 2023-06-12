@@ -21,7 +21,8 @@ function Board({ xIsNext, squares, onPlay }) {
     const nextSquares = squares.slice();
     if (xIsNext) {
       nextSquares[i] = 'X';
-    } else {
+    } 
+    else {
       nextSquares[i] = 'O';
     }
     onPlay(nextSquares);
@@ -76,7 +77,7 @@ export default function Game() {
     setCurrentMove(nextMove);
   }
 
-  const moves = history.map((squares, move) => {
+  const moves = history.map((move) => {
     let description;
     if (move > 0) {
       description = 'Go to move #' + move;
